@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peer-loop"
+version = "0.1.0"
+description = "A cyclic planner-executor-reviewer multi-agent loop: the reviewer can reject the executor's output and send it back to the planner with a specific reason, up to a max-iteration cap. Includes a deterministic fake LLM client for fully-tested orchestration logic, plus a real Anthropic/OpenAI-backed client."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hamza Ouadid" }]
+dependencies = [
+    "typer>=0.12",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+anthropic = ["anthropic>=0.30"]
+openai = ["openai>=1.30"]
+
+[project.scripts]
+peer-loop = "peer_loop.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
