@@ -6,8 +6,8 @@ fix, an **executor** applies it and runs the real test suite, and a
 to return — rejecting with a specific reason and sending it back to the
 planner if it doesn't hold up, up to a hard iteration cap.
 
-This is built against
-[`07-planner-executor-reviewer-multi-agent-loop.md`](../Project_Specs_20/07-planner-executor-reviewer-multi-agent-loop.md).
+This is built as project 7 of a 20-project portfolio, against the spec
+`07-planner-executor-reviewer-multi-agent-loop.md`.
 
 ## What's real here, honestly
 
@@ -109,6 +109,7 @@ patches its own previous attempt. Documented here rather than hidden.
 ## Install
 
 ```bash
+git clone https://github.com/HamzaOuadid/planner-executor-reviewer.git
 cd planner-executor-reviewer
 pip install -e ".[dev]"
 ```
